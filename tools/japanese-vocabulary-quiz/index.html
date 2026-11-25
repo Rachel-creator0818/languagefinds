@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Study JLPT vocabulary in 20-word units, review words with spaced repetition, and test meanings, readings and kanji from N5 to N1." name="description"/>
+<meta content="Japanese vocabulary quiz, JLPT vocabulary quiz, JLPT vocabulary test, Japanese vocabulary practice, JLPT N5 vocabulary, JLPT N4 vocabulary, JLPT N3 vocabulary, JLPT N2 vocabulary, JLPT N1 vocabulary, Japanese flashcards, Japanese word match, spaced repetition" name="keywords"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://languagefinds.com/tools/japanese-vocabulary-quiz/" rel="canonical"/>
+<link href="./assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="website" property="og:type"/>
+<meta content="Language Finds" property="og:site_name"/>
+<meta content="Japanese Vocabulary Quiz – Free JLPT Practice" property="og:title"/>
+<meta content="Learn Japanese vocabulary in focused units, review words before you forget them, and test recall from JLPT N5 to N1." property="og:description"/>
+<meta content="https://languagefinds.com/tools/japanese-vocabulary-quiz/" property="og:url"/>
+<meta content="https://languagefinds.com/tools/japanese-vocabulary-quiz/assets/language-finds-og.svg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Japanese Vocabulary Quiz – Free JLPT Practice" name="twitter:title"/>
+<meta content="20-word JLPT study units, spaced review, quizzes, audio and word matching from N5 to N1." name="twitter:description"/>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Japanese Vocabulary Quiz",
+      "url": "https://languagefinds.com/tools/japanese-vocabulary-quiz/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "description": "A free JLPT vocabulary study tool with 20-word units, local spaced review, meaning, reading and kanji quizzes, audio and word matching."
+    }
+  </script>
+<title>Japanese Vocabulary Quiz | JLPT N5–N1 Practice</title>
+<link href="./styles.css?v=1.0.3" rel="stylesheet"/>
+</head>
+<body>
+<div class="shell">
+<header>
+<a aria-label="Go to the Language Finds homepage" class="brand" href="../../"><b>LF</b><span>Language Finds</span></a>
+<span class="status"><span aria-hidden="true">●</span> 日本語 practice · <span id="today">ready</span></span>
+</header>
+<main>
+<section id="setup">
+<div class="intro">
+<small>JLPT VOCABULARY PRACTICE</small>
+<h1>Japanese Vocabulary Quiz</h1>
+<p>Study JLPT vocabulary in focused 20-word units, review words before you forget them, and test your recall with meaning, reading, kanji and word-matching practice.</p>
+</div>
+<div class="panel">
+<div aria-hidden="true" class="panel-pins"><span></span><span></span><span></span></div>
+<div class="panel-top"><strong>Your study desk</strong><small>DAILY JLPT PRACTICE</small></div>
+<fieldset>
+<legend>Choose a level</legend>
+<div class="levels" id="levels">
+<button aria-pressed="true" class="active" data-level="N5">N5 <span>Beginner</span></button>
+<button aria-pressed="false" data-level="N4">N4 <span>Elementary</span></button>
+<button aria-pressed="false" data-level="N3">N3 <span>Intermediate</span></button>
+<button aria-pressed="false" data-level="N2">N2 <span>Upper int.</span></button>
+<button aria-pressed="false" data-level="N1">N1 <span>Advanced</span></button>
+</div>
+</fieldset>
+<fieldset>
+<legend>Test your</legend>
+<div class="modes">
+<button aria-pressed="true" class="active" data-mode="meaning">Meaning <span>What does it mean?</span></button>
+<button aria-pressed="false" data-mode="reading">Reading <span>How do you say it?</span></button>
+<button aria-pressed="false" data-mode="kanji">Kanji <span>Match the characters</span></button>
+</div>
+</fieldset>
+<details class="more-filters" id="moreFilters">
+<summary><span>More filters</span><small id="filterSummary">All words</small></summary>
+<div class="filter-grid">
+<label>Word type
+                <select id="wordTypeFilter">
+<option value="all">All</option>
+<option value="kanji">Kanji</option>
+<option value="hiragana">Hiragana</option>
+<option value="katakana">Katakana</option>
+</select>
+</label>
+<label>Part of speech
+                <select id="posFilter">
+<option value="all">All</option>
+<option value="noun">Noun</option>
+<option value="verb">Verb</option>
+<option value="adjective">Adjective</option>
+<option value="adverb">Adverb</option>
+<option value="expression">Expression</option>
+</select>
+</label>
+</div>
+<p aria-live="polite" class="filter-status" id="filterStatus" role="status"></p>
+</details>
+<button class="start" id="start">Start vocabulary quiz <b aria-hidden="true">→</b></button>
+<section aria-label="Study plan for the selected JLPT level" class="study-path">
+<div class="study-path-main">
+<div><strong id="studyUnitTitle">N5 · Unit 01</strong><span id="studyUnitDetail">20 new words</span></div>
+<button id="studyUnitStart" type="button"><span>Start unit</span><b aria-hidden="true">→</b></button>
+</div>
+<div aria-hidden="true" class="study-path-progress"><span id="studyProgressBar"></span></div>
+<div class="study-path-meta"><span id="studyProgressText">0 / 663 studied</span><span id="studyDueText">Nothing due now</span></div>
+</section>
+<div class="secondary-actions">
+<button class="learn-link" id="learnStart" type="button">Preview this unit <span aria-hidden="true">↗</span></button>
+<button class="learn-link review-link" id="reviewStart" type="button">
+<span class="review-button-copy"><strong>Smart review</strong><small id="reviewDueText">Nothing due today</small></span>
+<span aria-hidden="true" id="reviewBadge">0</span>
+</button>
+<button class="learn-link match-entry-link" id="matchStart" type="button">
+<span><strong>Word match</strong><small>Match Japanese with meanings or readings</small></span>
+<span aria-hidden="true">→</span>
+</button>
+</div>
+<p class="note">Progress stays on this device</p>
+</div>
+</section>
+<section hidden="" id="quiz">
+<div class="quizbar"><button id="quit">← Setup</button><span id="meta">N5 / MEANING</span><span id="count">01 / 10</span></div>
+<div aria-hidden="true" class="track"><span id="bar"></span></div>
+<div class="question">
+<small id="prompt">WHAT DOES THIS WORD MEAN?</small>
+<div class="word"><strong id="kanji">約束</strong><span id="kana">やくそく</span><button class="listen" id="quizSpeak" type="button">Listen</button></div>
+<p class="speech-support" hidden="" id="quizSpeechSupport">Audio pronunciation isn’t available in this browser. The kana reading is still shown with each word.</p>
+<div class="answers" id="answers"></div>
+<p aria-live="polite" class="feedback" id="feedback" role="status"></p>
+<div class="quiz-actions"><button id="skipWord" type="button">Skip</button><button id="saveWord" type="button">＋ Add to review</button></div>
+</div>
+</section>
+<section hidden="" id="results">
+<div class="results-nav"><button id="resultsHome" type="button">← Back to home</button><span>Your progress is saved</span></div>
+<small>ROUND COMPLETE</small>
+<h2>Nice work.<br/><i>Keep the words close.</i></h2>
+<div class="score"><strong id="score">0</strong><span>/ 10 correct</span><small id="caption"></small></div>
+<div class="review-head"><h3>Words added to review</h3><small id="reviewCount"></small></div>
+<div id="review"></div>
+<button class="start review-missed" id="reviewMissed" type="button">Review missed words <b aria-hidden="true">→</b></button>
+<button class="learn-link result-secondary" id="again" type="button">Try another round <span aria-hidden="true">↗</span></button>
+<button class="learn-link result-note-link" id="makeNote" type="button">Create study note <span aria-hidden="true">✦</span></button>
+<div class="study-note" hidden="" id="studyNote">
+<div class="note-customize">
+<label>Color<select id="noteTheme"><option value="sakura">Sakura</option><option value="matcha">Matcha</option><option value="soda">Soda</option><option value="night">Night</option></select></label>
+<label>Layout<select id="noteLayout"><option value="story">Study list</option><option value="grid">Word grid</option><option value="compact">Compact</option></select></label>
+<button id="newNoteStory" type="button">Show word list</button><button class="ai-story-button" id="generateAiStory" type="button">Generate AI story</button>
+</div>
+<p aria-live="polite" class="ai-story-status" id="aiStoryStatus" role="status"></p>
+<a class="story-preview-link" hidden="" href="http://localhost:8000" id="storyPreviewLink">Open the safe local preview <span aria-hidden="true">↗</span></a>
+<div class="note-paper" id="notePaper"><small id="noteLabel">N5 · ROUND STUDY NOTE</small><h3 id="noteTitle">10 words from this round</h3><p hidden="" id="noteStory"></p><div class="note-words" id="noteWords"></div><span class="note-signature">LANGUAGE FINDS · KEEP GOING</span></div>
+<button class="start" id="downloadNote" type="button">Download PNG <b aria-hidden="true">↓</b></button>
+</div>
+</section>
+<section hidden="" id="learnView">
+<div class="quizbar"><button id="learnQuit" type="button">← Setup</button><span id="learnMeta">N5 / LEARN</span><span id="learnCount">01 / 10</span></div>
+<div aria-label="Choose how to study these words" class="learn-view-switch" role="group">
+<button aria-pressed="true" class="active" id="learnFlashMode" type="button"><strong>Study cards</strong><span>One word at a time</span></button>
+<button aria-pressed="false" id="learnListMode" type="button"><strong>Full list</strong><span>See every answer</span></button>
+</div>
+<p class="review-session-note" hidden="" id="reviewSessionNote">Rate each word after revealing it. Your next review is scheduled automatically on this device.</p>
+<p class="speech-support" hidden="" id="learnSpeechSupport">Audio pronunciation isn’t available in this browser. You can still study with the kana readings.</p>
+<div id="learnFlashPanel">
+<div aria-hidden="true" class="track"><span id="learnBar"></span></div>
+<div class="learn-card">
+<small id="learnType">KANJI WORD</small><strong id="learnKanji">約束</strong><span hidden="" id="learnKana">やくそく</span><p hidden="" id="learnMeaning">promise</p>
+<button class="listen" id="learnSpeak" type="button">Listen</button>
+<button class="reveal" id="reveal" type="button">Show reading &amp; meaning</button>
+<div class="learn-actions" hidden="" id="learnActions">
+<button id="learnAgain" type="button"><strong>Again</strong><small>Tomorrow</small></button>
+<button id="learnHard" type="button"><strong>Hard</strong><small>3 days</small></button>
+<button id="learnGotIt" type="button"><strong>Know</strong><small>7 days</small></button>
+</div>
+</div>
+</div>
+<div hidden="" id="learnListPanel">
+<div class="learn-list-heading"><div><h2>Your unit, at a glance.</h2><p>Read each word, check the meaning, then listen.</p></div><span id="learnListTotal">20 words</span></div>
+<div class="learn-list" id="learnList"></div>
+</div>
+</section>
+<section hidden="" id="matchGame">
+<div class="quizbar"><button id="matchQuit" type="button">← Home</button><span>WORD MATCH</span><span id="matchRoundMeta">ROUND 1</span></div>
+<div class="match-heading">
+<div><h2>Match the pairs.</h2><p>Choose one Japanese word and its matching meaning or reading.</p></div>
+<div class="match-stats"><span><small>TIME</small><strong id="matchTime">00:00</strong></span><span><small>MISTAKES</small><strong id="matchMistakes">0</strong></span><span><small>LEFT</small><strong id="matchLeft">6</strong></span></div>
+</div>
+<div class="match-toolbar">
+<div aria-label="Word match level" class="match-levels">
+<button aria-pressed="true" class="active" data-match-level="N5">N5</button><button aria-pressed="false" data-match-level="N4">N4</button><button aria-pressed="false" data-match-level="N3">N3</button><button aria-pressed="false" data-match-level="N2">N2</button><button aria-pressed="false" data-match-level="N1">N1</button>
+</div>
+<div aria-label="Word match type" class="match-modes">
+<button aria-pressed="true" class="active" data-match-mode="meaning">Meaning</button><button aria-pressed="false" data-match-mode="reading">Reading</button>
+</div>
+</div>
+<p aria-live="polite" class="match-feedback" id="matchFeedback" role="status">Pick a word from each side.</p>
+<div class="match-board" id="matchBoard"><div id="matchWords"></div><div id="matchAnswers"></div></div>
+<div class="match-complete" hidden="" id="matchComplete">
+<div aria-hidden="true" class="match-clear-grid"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<h2>Round complete.</h2><p id="matchSummary">Finished in 00:00 with 0 mistakes.</p>
+<div class="match-complete-actions"><button class="start" id="matchNextRound" type="button">Next round <b aria-hidden="true">→</b></button><button class="learn-link" id="matchHome" type="button">Back to home</button></div>
+</div>
+</section>
+<div class="home-content">
+<section aria-labelledby="howTitle" class="content-section how-section">
+<div class="section-intro">
+<h2 id="howTitle">A study loop built for exam season.</h2>
+<p>Open the page, continue where you stopped, and spend your time on the words that need attention now.</p>
+</div>
+<ol class="how-steps">
+<li><span>1</span><div><h3>Learn one small unit</h3><p>Study 20 words with full readings, meanings, word classes and audio.</p></div></li>
+<li><span>2</span><div><h3>Review what is due</h3><p>Again, Hard and Know schedule each word for the right return time.</p></div></li>
+<li><span>3</span><div><h3>Check your recall</h3><p>Use a 10-question quiz or a six-pair Word Match round.</p></div></li>
+</ol>
+</section>
+<section aria-labelledby="unitTitle" class="content-section feature-section unit-feature">
+<div class="section-intro">
+<h2 id="unitTitle">Make a large word list feel finishable.</h2>
+<p>Each JLPT level is divided into 20-word units. Study one word at a time or scan the full unit, then return to the first word you have not finished.</p>
+<div class="mode-copy">
+<p><b>Study cards</b><span>Learn each word with its answer already visible.</span></p>
+<p><b>Full list</b><span>Compare all 20 words, readings and meanings.</span></p>
+</div>
+</div>
+<div aria-label="Example N3 study unit progress" class="unit-demo">
+<div class="unit-demo-head"><span>N3 · UNIT 08 OF 86</span><span>20 WORDS</span></div>
+<strong>Continue your unit</strong>
+<p>13 new words left</p>
+<div aria-hidden="true" class="unit-demo-track"><span></span></div>
+<div class="unit-demo-meta"><span>7 / 20 studied</span><span>Progress saved</span></div>
+<div class="unit-demo-modes"><span><b>Study cards</b><small>One at a time</small></span><span><b>Full list</b><small>See every answer</small></span></div>
+</div>
+</section>
+<section aria-labelledby="reviewTitle" class="content-section feature-section review-feature">
+<div aria-label="Smart Review schedule example" class="feature-demo">
+<div class="demo-word"><strong lang="ja">約束</strong><span lang="ja">やくそく</span><em>promise</em></div>
+<p>Rate the word after revealing it:</p>
+<div class="demo-ratings"><span><b>Again</b><small>10 min</small></span><span><b>Hard</b><small>Tomorrow</small></span><span><b>Know</b><small>3 days</small></span></div>
+<small>The interval grows as the word becomes familiar.</small>
+</div>
+<div class="section-intro">
+<h2 id="reviewTitle">Review each word before it fades.</h2>
+<p>Words you study, miss or save enter Smart Review. Reveal the answer, rate your recall, and let the browser build the next review queue without an account.</p>
+</div>
+</section>
+<section aria-labelledby="practiceTitle" class="content-section feature-section practice-section">
+<div class="section-intro">
+<h2 id="practiceTitle">Test recall from more than one direction.</h2>
+<p>A short quiz checks what you can retrieve on your own. Word Match gives the same vocabulary a faster, lighter practice round.</p>
+<div class="mode-copy">
+<p><b>Quiz</b><span>Practice meaning, reading or written kanji.</span></p>
+<p><b>Word Match</b><span>Connect six Japanese words with meanings or readings.</span></p>
+<p><b>Filters</b><span>Focus on a script type or part of speech.</span></p>
+</div>
+</div>
+<div aria-label="Example Japanese vocabulary quiz question" class="quiz-preview">
+<div class="preview-meta"><span>N3 / MEANING</span><span>04 / 10</span></div>
+<div class="preview-progress"><span></span></div>
+<small>WHAT DOES THIS WORD MEAN?</small>
+<strong lang="ja">約束</strong>
+<span lang="ja">やくそく</span>
+<div class="preview-answers"><b>A　station</b><b class="preview-correct">B　promise</b><b>C　homework</b><b>D　meeting</b></div>
+</div>
+</section>
+<section aria-labelledby="noteFeatureTitle" class="content-section feature-section note-feature">
+<div aria-label="Example downloadable vocabulary study note" class="study-note-preview">
+<small>N3 · ROUND STUDY NOTE</small>
+<h3>10 words from this round</h3>
+<div class="preview-note-words">
+<span><ruby>約束<rt>やくそく</rt></ruby><b>promise</b></span>
+<span><ruby>予定<rt>よてい</rt></ruby><b>plan</b></span>
+<span><ruby>続く<rt>つづく</rt></ruby><b>continue</b></span>
+<span><ruby>選ぶ<rt>えらぶ</rt></ruby><b>choose</b></span>
+</div>
+<em>LANGUAGE FINDS · KEEP GOING</em>
+</div>
+<div class="section-intro">
+<h2 id="noteFeatureTitle">Keep a useful record of each round.</h2>
+<p>Download all ten words, readings and English meanings as a study PNG. Choose a color and layout that is easy to revisit away from the quiz.</p>
+<ul aria-label="Study note choices" class="quiet-list">
+<li><b>Colors</b><span>Sakura · Matcha · Soda · Night</span></li>
+<li><b>Layouts</b><span>Study List · Word Grid · Compact</span></li>
+</ul>
+<div class="inline-feature-note">
+<h3>Create an optional AI story</h3>
+<p>Connect all ten words in a short Japanese story, with readings kept in context and the original word list below.</p>
+</div>
+</div>
+</section>
+<aside aria-labelledby="jlptNoteTitle" class="jlpt-note">
+<div><span aria-hidden="true">日本語</span></div>
+<div>
+<h2 id="jlptNoteTitle">8,087 words organized from N5 to N1.</h2>
+<div aria-label="Vocabulary count by study level" class="coverage-counts"><span><b>N5</b>663</span><span><b>N4</b>630</span><span><b>N3</b>1,706</span><span><b>N2</b>1,785</span><span><b>N1</b>3,303</span></div>
+<p>The JLPT organizers do not publish an official fixed vocabulary list. These are community-standard study estimates, organized for practice rather than a prediction of exam content. Readings, meanings and word classes have been checked against JMdict.</p>
+</div>
+</aside>
+<section aria-labelledby="faqTitle" class="content-section faq-section">
+<div class="section-intro"><h2 id="faqTitle">Before you begin</h2><p>The details that matter when you are building a daily study routine.</p></div>
+<div class="guide-faq">
+<details><summary>Is this an official JLPT vocabulary test?</summary><p>No. Language Finds is an independent practice tool. N5–N1 labels help organize study but do not represent official JLPT vocabulary lists.</p></details>
+<details><summary>How do the 20-word units work?</summary><p>Each level is divided into fixed groups of up to 20 words. Language Finds continues from the first word in your current unit that has not yet been studied.</p></details>
+<details><summary>When will a word return for review?</summary><p>Again starts with 10 minutes, Hard starts with tomorrow, and Know starts with three days. Later intervals grow with your review history.</p></details>
+<details><summary>What happens to words I miss in a quiz?</summary><p>They are added to Smart Review automatically. When space remains, a missed word may also return later in the same 10-question round.</p></details>
+<details><summary>Where is my progress saved?</summary><p>On this device only. No account is required, and no study history is sent to a server. Clearing browser storage will also clear your progress.</p></details>
+<details><summary>What does the AI story feature do?</summary><p>It creates a short story containing all ten words from your completed round. It is optional and limited separately from the browser-local study tools.</p></details>
+</div>
+</section>
+</div>
+</main>
+<footer>
+<span>Built for curious learners.</span>
+</footer>
+</div>
+<script src="./story-config.js"></script>
+<script src="./data/n5-vocabulary.js"></script>
+<script src="./data/n4-vocabulary.js"></script>
+<script src="./data/n3-vocabulary.js"></script>
+<script src="./data/n2-vocabulary.js"></script>
+<script src="./data/n1-vocabulary.js"></script>
+<script src="./app-v2.js?v=1.0.3"></script>
+</body>
+</html>

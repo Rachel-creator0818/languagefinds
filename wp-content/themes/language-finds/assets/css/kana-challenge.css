@@ -1,0 +1,328 @@
+body:has(.lf-kana-page){background:var(--lf-paper,#fbf8f2);color:var(--lf-ink,#312a35)}
+body:has(.lf-kana-page) .wp-block-post-title{display:none}
+body:has(.lf-kana-page) .wp-block-post-content{margin-block-start:0}
+.lf-kana-page,.lf-kana-page *{box-sizing:border-box}
+.lf-kana-page{width:min(1210px,calc(100vw - 2rem));max-width:none!important;margin:1rem 0 5rem;position:relative;left:50%;transform:translateX(-50%);font-family:var(--lf-font-sans,"Instrument Sans","Noto Sans SC","Noto Sans JP",sans-serif);color:var(--lf-ink,#312a35)}
+.lf-kana-page button{font:inherit}
+.lf-kana-intro{min-height:42rem;display:grid;grid-template-columns:minmax(18rem,.78fr) minmax(32rem,1.22fr);border:1.5px solid var(--lf-ink,#312a35);border-radius:.55rem;background:var(--lf-sheet,#fffdfa);box-shadow:.45rem .5rem 1.4rem rgba(49,42,53,.1);overflow:hidden}
+.lf-kana-copy{padding:clamp(2rem,4vw,4rem);display:flex;flex-direction:column;background:var(--lf-lavender-soft,#f3edfb);border-right:1.5px solid var(--lf-ink,#312a35)}
+.lf-kana-japanese{margin:0 0 2rem;color:var(--lf-purple-dark,#553d69);font-size:.78rem;letter-spacing:.08em}
+.lf-kana-copy h1{max-width:8ch;margin:0;font-family:var(--lf-font-serif,"Instrument Serif","Noto Serif JP",serif);font-size:clamp(3.3rem,5.4vw,5.8rem);font-weight:400;line-height:.88;letter-spacing:-.035em}
+.lf-kana-copy h1 em{color:var(--lf-purple,#715389);font-style:normal}
+.lf-kana-lede{max-width:33rem;margin:2rem 0 0;color:var(--lf-body,#625968);font-size:.9rem;line-height:1.75}
+.lf-kana-points{margin:auto 0 0;padding:2rem 0 0;display:grid;gap:.75rem;border-top:1px solid rgba(49,42,53,.18);list-style:none}
+.lf-kana-points li{display:flex;align-items:center;gap:.8rem;color:var(--lf-body,#625968);font-size:.72rem}
+.lf-kana-points span{width:2rem;color:var(--lf-purple,#715389);font-size:.58rem;font-weight:700}
+.lf-kana-game{min-width:0;padding:clamp(1.25rem,3vw,2.25rem);display:flex;flex-direction:column;background:#fffdfa}
+.lf-kana-game-head{min-height:4.4rem;padding-bottom:1rem;display:grid;grid-template-columns:1fr auto auto;gap:1.5rem;align-items:center;border-bottom:1.5px solid var(--lf-ink,#312a35)}
+.lf-kana-timer{display:flex;align-items:baseline;color:#bd5c59;font-family:var(--lf-font-serif,"Instrument Serif",serif)}
+.lf-kana-timer span{font-size:2.8rem;line-height:1}.lf-kana-timer small{margin-left:.2rem;font-family:var(--lf-font-sans,sans-serif);font-size:.65rem;font-weight:700}
+.lf-kana-score,.lf-kana-streak{min-width:5.2rem;display:grid;gap:.18rem;text-align:right}.lf-kana-score span,.lf-kana-streak span{color:var(--lf-body,#625968);font-size:.58rem}.lf-kana-score strong,.lf-kana-streak strong{font-size:1.35rem;line-height:1}
+.lf-kana-ready{flex:1;display:flex;flex-direction:column;justify-content:center}
+.lf-kana-mode{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.lf-kana-mode button{min-height:7.3rem;padding:1rem;border:0;border-radius:.42rem;background:#f5f0f3;color:var(--lf-ink,#312a35);cursor:pointer;transition:background .18s ease,transform .18s ease,box-shadow .18s ease}
+.lf-kana-mode button:hover{background:var(--lf-lavender,#eadffd);transform:translateY(-2px)}
+.lf-kana-mode button.is-active{background:#d9c7fb;box-shadow:inset 0 0 0 1.5px var(--lf-ink,#312a35),0 .5rem 1rem rgba(49,42,53,.12)}
+.lf-kana-mode strong{display:block;font-family:var(--lf-font-ja-serif,"Noto Serif JP","Yu Mincho",serif);font-size:2rem;font-weight:500}.lf-kana-mode span{font-size:.68rem;font-weight:700}
+.lf-kana-ready-note{margin:2.2rem 0 1.5rem;display:flex;align-items:baseline;justify-content:space-between;gap:1rem}.lf-kana-ready-note span{font-family:var(--lf-font-ja-serif,"Noto Serif JP",serif);font-size:1.25rem}.lf-kana-ready-note p{margin:0;color:var(--lf-body,#625968);font-size:.7rem}
+.lf-kana-primary,.lf-kana-secondary{min-height:3.4rem;padding:.85rem 1.1rem;border:0;border-radius:.38rem;font-weight:700;cursor:pointer}
+.lf-kana-primary{display:flex;align-items:center;justify-content:space-between;background:var(--lf-purple-dark,#553d69);color:#fff;box-shadow:0 .55rem 1.2rem rgba(85,61,105,.2)}.lf-kana-primary:hover{background:var(--lf-purple,#715389)}
+.lf-kana-secondary{background:var(--lf-lavender-soft,#f3edfb);color:var(--lf-purple-dark,#553d69)}
+.lf-kana-best{margin:.8rem 0 0;color:var(--lf-body,#625968);font-size:.65rem;text-align:center}
+.lf-kana-playing{flex:1;position:relative;text-align:center}.lf-kana-progress{height:.34rem;margin:1.25rem 0 1.7rem;background:#eee9eb;overflow:hidden}.lf-kana-progress i{width:100%;height:100%;display:block;background:#bd5c59;transform:scaleX(1);transform-origin:left center;transition:transform 1s linear}
+.lf-kana-prompt{margin:0;color:var(--lf-body,#625968);font-size:.7rem}.lf-kana-character{min-height:10.5rem;display:grid;place-items:center;font-family:var(--lf-font-ja-serif,"Noto Serif JP","Yu Mincho",serif);font-size:8rem;line-height:1}
+.lf-kana-answers{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}.lf-kana-answers button{min-height:3.8rem;border:0;border-radius:.38rem;background:#f2edf1;color:var(--lf-ink,#312a35);font-size:1rem;font-weight:700;cursor:pointer}.lf-kana-answers button:hover:not(:disabled){background:var(--lf-lavender,#eadffd)}.lf-kana-answers button.is-correct{background:#d8ead0;color:#294520;box-shadow:inset 0 0 0 1.5px #78956b}.lf-kana-answers button.is-wrong{background:#f5d7da;color:#71373c;box-shadow:inset 0 0 0 1.5px #bd747a}.lf-kana-feedback{min-height:1.3rem;margin:1rem 0 0;color:var(--lf-purple-dark,#553d69);font-size:.7rem;font-weight:700}
+.lf-kana-result{flex:1;padding:clamp(1rem,3vw,2.3rem) 0;align-content:center}.lf-kana-result-ja{margin:0 0 .6rem;color:#bd5c59;font-size:.76rem}.lf-kana-result h2{max-width:16ch;margin:0;font-family:var(--lf-font-serif,"Instrument Serif",serif);font-size:clamp(2rem,3.4vw,3.2rem);font-weight:400;line-height:1.05;letter-spacing:-.025em}.lf-kana-result h2 strong{color:var(--lf-purple,#715389);font-weight:400}
+.lf-kana-result-grid{margin:2rem 0;display:grid;grid-template-columns:repeat(3,1fr);background:var(--lf-lavender-soft,#f3edfb)}.lf-kana-result-grid div{padding:1rem;border-right:1px solid rgba(49,42,53,.16)}.lf-kana-result-grid div:last-child{border:0}.lf-kana-result-grid span{display:block;color:var(--lf-body,#625968);font-size:.58rem}.lf-kana-result-grid strong{display:block;margin-top:.25rem;font-size:1.4rem}
+.lf-kana-mistakes h3{margin:0 0 .7rem;font-size:.72rem}.lf-kana-mistakes>div{min-height:4rem;display:flex;gap:.5rem;align-items:center}.lf-kana-mistakes>div>span{min-width:3.7rem;padding:.55rem;display:grid;place-items:center;background:#f5f0f3;border-radius:.35rem}.lf-kana-mistakes b{font-family:var(--lf-font-ja-serif,"Noto Serif JP",serif);font-size:1.2rem}.lf-kana-mistakes small{color:var(--lf-body,#625968);font-size:.55rem}.lf-kana-mistakes p{color:var(--lf-body,#625968);font-size:.75rem}
+.lf-kana-actions{margin-top:1.6rem;display:grid;grid-template-columns:1fr auto;gap:.7rem}.lf-kana-actions .lf-kana-primary{display:block}
+.lf-kana-page button:focus-visible{outline:2px solid var(--lf-purple,#715389);outline-offset:3px}
+.lf-kana-guide{margin-top:2.5rem;padding:2rem 0;border-top:1.5px solid var(--lf-ink,#312a35);display:grid;grid-template-columns:.45fr 1.55fr;gap:4rem}.lf-kana-guide h2{margin:0;font-family:var(--lf-font-serif,"Instrument Serif",serif);font-size:2.2rem;font-weight:400}.lf-kana-guide>div{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.lf-kana-guide p{margin:0}.lf-kana-guide strong{display:block;margin-bottom:.5rem;font-size:.72rem}.lf-kana-guide span{color:var(--lf-body,#625968);font-size:.72rem;line-height:1.65}
+[data-screen][hidden]{display:none!important}
+@media(max-width:900px){.lf-kana-intro{grid-template-columns:1fr}.lf-kana-copy{min-height:29rem;border-right:0;border-bottom:1.5px solid var(--lf-ink,#312a35)}.lf-kana-game{min-height:39rem}.lf-kana-points{margin-top:3rem}.lf-kana-guide{grid-template-columns:1fr;gap:1.5rem}}
+@media(max-width:620px){.lf-kana-page{width:calc(100vw - 1rem)!important;margin-top:.5rem}.lf-kana-copy{min-height:25rem;padding:1.4rem}.lf-kana-copy h1{font-size:3.45rem}.lf-kana-lede{font-size:.82rem}.lf-kana-points{display:none}.lf-kana-game{min-height:35.5rem;padding:1rem}.lf-kana-game-head{grid-template-columns:1fr auto auto;gap:.7rem}.lf-kana-timer span{font-size:2.25rem}.lf-kana-score,.lf-kana-streak{min-width:3.7rem}.lf-kana-mode{gap:.4rem}.lf-kana-mode button{min-height:6.6rem;padding:.6rem}.lf-kana-mode strong{font-size:1.55rem}.lf-kana-ready-note{align-items:flex-start;flex-direction:column}.lf-kana-character{min-height:9rem;font-size:6.7rem}.lf-kana-answers button{min-height:3.6rem}.lf-kana-result-grid div{padding:.8rem .45rem}.lf-kana-mistakes>div{overflow-x:auto}.lf-kana-actions{grid-template-columns:1fr}.lf-kana-guide{padding:1.5rem .4rem}.lf-kana-guide>div{grid-template-columns:1fr;gap:1.25rem}}
+@media(prefers-reduced-motion:reduce){.lf-kana-mode button,.lf-kana-progress i{transition:none}.lf-kana-mode button:hover{transform:none}}
+
+/* Tool-first English layout: quiz above, search-friendly learning content below. */
+.lf-kana-hero{max-width:54rem;margin:0 auto;padding:clamp(2.4rem,5vw,4.5rem) 1rem 1.8rem;text-align:center}
+.lf-kana-hero>p{margin:0 0 .75rem;color:var(--lf-purple,#715389);font-family:var(--lf-font-ja-serif,"Noto Serif JP",serif);font-size:.78rem;letter-spacing:.08em}
+.lf-kana-hero h1{max-width:13ch;margin:0 auto;font-family:var(--lf-font-serif,"Instrument Serif",serif);font-size:clamp(3rem,6vw,5.5rem);font-weight:400;line-height:.92;letter-spacing:-.035em;text-wrap:balance}
+.lf-kana-hero>div{max-width:42rem;margin:1.2rem auto 0;color:var(--lf-body,#625968);font-size:.9rem;line-height:1.65}
+.lf-kana-page>.lf-kana-game{width:min(47rem,100%);min-height:34rem;margin:0 auto;padding:clamp(1.25rem,3vw,2.25rem);border:1.5px solid var(--lf-ink,#312a35);border-radius:.55rem;background:var(--lf-sheet,#fffdfa);box-shadow:.45rem .5rem 1.4rem rgba(49,42,53,.1)}
+.lf-kana-seo{width:min(66rem,100%);margin:5rem auto 0}
+.lf-kana-seo .lf-kana-guide{margin-top:0;padding:2.5rem 0;border-top:1.5px solid var(--lf-ink,#312a35);border-bottom:1px solid rgba(49,42,53,.18)}
+.lf-kana-reading{padding:4rem 0;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(17rem,.7fr);gap:clamp(2.5rem,7vw,6rem);align-items:start}
+.lf-kana-reading h2,.lf-kana-faq h2{margin:0 0 1.25rem;font-family:var(--lf-font-serif,"Instrument Serif",serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:400;line-height:1.05;letter-spacing:-.025em}
+.lf-kana-reading p{max-width:68ch;margin:0 0 1rem;color:var(--lf-body,#625968);font-size:.9rem;line-height:1.8}
+.lf-kana-reading aside{padding:1.5rem;background:var(--lf-lavender-soft,#f3edfb);border-radius:.45rem}
+.lf-kana-reading h3{margin:0 0 1rem;font-size:.8rem}.lf-kana-reading ol{margin:0;padding-left:1.2rem;color:var(--lf-body,#625968);font-size:.78rem;line-height:1.8}
+.lf-kana-faq{padding:4rem 0;border-top:1.5px solid var(--lf-ink,#312a35)}
+.lf-kana-faq details{border-bottom:1px solid rgba(49,42,53,.2)}
+.lf-kana-faq summary{padding:1.15rem 2rem 1.15rem 0;position:relative;font-size:.9rem;font-weight:700;cursor:pointer;list-style:none}.lf-kana-faq summary::-webkit-details-marker{display:none}.lf-kana-faq summary::after{position:absolute;right:.2rem;content:"+";color:var(--lf-purple,#715389);font-size:1.2rem}.lf-kana-faq details[open] summary::after{content:"−"}
+.lf-kana-faq details p{max-width:68ch;margin:0;padding:0 0 1.25rem;color:var(--lf-body,#625968);font-size:.84rem;line-height:1.75}
+@media(max-width:720px){.lf-kana-hero{padding:2.2rem .6rem 1.3rem}.lf-kana-hero h1{font-size:3.15rem}.lf-kana-page>.lf-kana-game{min-height:35.5rem}.lf-kana-seo{margin-top:3.5rem}.lf-kana-seo .lf-kana-guide{display:block;padding:2rem .4rem}.lf-kana-seo .lf-kana-guide>div{margin-top:1.5rem}.lf-kana-reading{padding:3rem .4rem;grid-template-columns:1fr;gap:2rem}.lf-kana-faq{padding:3rem .4rem}}
+
+/* Playful challenge layer */
+.lf-kana-hero{max-width:74rem;position:relative;padding-top:3.2rem}
+.lf-kana-hero::before,.lf-kana-hero::after{position:absolute;z-index:-1;content:"";transform:rotate(-7deg)}
+.lf-kana-hero::before{width:5rem;height:5rem;left:4%;top:2.2rem;border-radius:1.1rem;background:var(--lf-yellow,#f1df82)}
+.lf-kana-hero::after{width:4rem;height:4rem;right:5%;top:4.5rem;border-radius:50%;background:var(--lf-blue,#c9e8f1)}
+.lf-kana-hero h1{max-width:none;font-family:var(--lf-font-sans,"Instrument Sans",sans-serif);font-size:clamp(2.8rem,4vw,3.8rem);font-weight:780;line-height:.95;letter-spacing:-.04em;white-space:nowrap}
+.lf-kana-hero>p{display:inline-block;padding:.35rem .65rem;border-radius:.35rem;background:var(--lf-pink,#efb8d2);color:var(--lf-ink,#312a35);font-weight:700;transform:rotate(-2deg)}
+.lf-kana-hero ul{margin:1rem 0 0;padding:0;display:flex;justify-content:center;gap:.45rem;list-style:none}.lf-kana-hero li{padding:.36rem .6rem;border-radius:.35rem;background:#fff;color:var(--lf-purple-dark,#553d69);box-shadow:0 .25rem .7rem rgba(49,42,53,.08);font-size:.62rem;font-weight:750}
+.lf-kana-page>.lf-kana-game{border:0;border-radius:1rem;background:#fff;box-shadow:0 1.1rem 2.8rem rgba(69,50,78,.15),0 0 0 1.5px var(--lf-ink,#312a35)}
+.lf-kana-game-head{border-bottom:0;background:var(--lf-lavender-soft,#f3edfb);margin:-.3rem -.3rem 1rem;padding:.85rem 1rem;border-radius:.65rem}
+.lf-kana-timer{min-width:5.8rem;justify-content:center;padding:.45rem .65rem;border-radius:.55rem;background:#fff}.lf-kana-timer span{font-family:var(--lf-font-sans,sans-serif);font-weight:800}
+.lf-kana-game-type{margin:.25rem 0 1rem;display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.lf-kana-game-type button{min-height:4.5rem;padding:.8rem 1rem;display:grid;gap:.2rem;border:0;border-radius:.65rem;background:var(--lf-blue,#c9e8f1);color:var(--lf-ink,#312a35);text-align:left;cursor:pointer;transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s ease}
+.lf-kana-game-type button:nth-child(2){background:var(--lf-pink,#efb8d2)}.lf-kana-game-type button:hover{transform:translateY(-2px)}.lf-kana-game-type button.is-active{box-shadow:inset 0 0 0 2px var(--lf-ink,#312a35),0 .4rem .9rem rgba(49,42,53,.12)}
+.lf-kana-game-type b{font-size:.82rem}.lf-kana-game-type span{font-size:.62rem;color:#514759}
+.lf-kana-mode button:nth-child(1){background:#f5e7ef}.lf-kana-mode button:nth-child(2){background:#e6f3f7}.lf-kana-mode button:nth-child(3){background:#f7f0c8}.lf-kana-mode button.is-active{background:#d9c7fb}
+.lf-kana-primary{background:#69428a}.lf-kana-primary:hover{background:#8256a5}
+.lf-kana-character{transition:transform .18s cubic-bezier(.2,.9,.2,1);font-weight:600}.lf-kana-playing:has(.is-correct) .lf-kana-character{transform:scale(1.06) rotate(-2deg)}
+.lf-kana-word-note{min-height:1.4rem;margin:-1rem 0 .8rem;color:var(--lf-purple-dark,#553d69);font-size:.68rem;font-weight:700}
+.lf-kana-game:has(.lf-kana-game-type [data-game-type="words"].is-active) .lf-kana-ready-note span{color:#b44d66}
+.lf-kana-game:has(.lf-kana-game-type [data-game-type="words"].is-active) .lf-kana-primary{background:#a84762}
+.lf-kana-mode[hidden]{display:none!important}
+.lf-kana-game:has([data-game-type="words"].is-active) .lf-kana-mistakes>div>span{min-width:10rem;justify-items:start}.lf-kana-game:has([data-game-type="words"].is-active) .lf-kana-mistakes b{font-size:1rem}.lf-kana-game:has([data-game-type="words"].is-active) .lf-kana-mistakes small{margin-top:.2rem;white-space:normal;text-align:left;line-height:1.35}
+@media(max-width:1050px){.lf-kana-hero h1{max-width:18ch;font-size:3.2rem;white-space:normal}}
+@media(max-width:720px){.lf-kana-hero{padding-top:2.2rem}.lf-kana-hero::before{width:2.8rem;height:2.8rem;left:0;top:1.5rem}.lf-kana-hero::after{width:2.6rem;height:2.6rem;right:0;top:5.5rem}.lf-kana-hero h1{max-width:9ch;font-size:2.85rem;line-height:.94;white-space:normal}.lf-kana-hero ul{flex-wrap:wrap}.lf-kana-page>.lf-kana-game{min-height:38rem}.lf-kana-game-type button{min-height:4.1rem;padding:.65rem}.lf-kana-game-type b{font-size:.72rem}.lf-kana-game-type span{font-size:.56rem}.lf-kana-character{font-size:5.9rem}.lf-kana-game:has([data-game-type="words"].is-active) .lf-kana-character{font-size:3.35rem}}
+
+/* Distilled single-choice game shell */
+.lf-kana-hero{padding-top:2.8rem}.lf-kana-hero::before,.lf-kana-hero::after{display:none}.lf-kana-hero>p{padding:.3rem .55rem;background:var(--lf-lavender,#eadffd);transform:none}.lf-kana-hero>div{margin-top:.8rem}.lf-kana-page>.lf-kana-game{width:min(60rem,100%);min-height:31rem;padding:1.5rem 1.7rem;border-radius:.55rem;box-shadow:0 .9rem 2.2rem rgba(69,50,78,.11),0 0 0 1px rgba(49,42,53,.5)}
+.lf-kana-game-head{margin:0 0 1.1rem;padding:.8rem 1rem;border-radius:.4rem;background:var(--lf-lavender-soft,#f3edfb)}
+.lf-kana-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}
+.lf-kana-choices button{min-height:5.5rem;padding:.8rem 1rem;display:grid;grid-template-columns:4.4rem minmax(0,1fr) 1rem;gap:.8rem;align-items:center;border:1px solid rgba(49,42,53,.16);border-radius:.42rem;background:#fff;color:var(--lf-ink,#312a35);text-align:left;cursor:pointer;transition:background .18s ease,border-color .18s ease,transform .18s ease}
+.lf-kana-choices button:hover{border-color:var(--lf-purple,#715389);background:var(--lf-lavender-soft,#f3edfb);transform:translateY(-1px)}.lf-kana-choices button.is-active{border-color:var(--lf-purple-dark,#553d69);background:var(--lf-lavender,#eadffd);box-shadow:inset 0 0 0 1px var(--lf-purple-dark,#553d69)}
+.lf-kana-choices strong{font-family:var(--lf-font-ja-serif,"Noto Serif JP",serif);font-size:1.75rem;font-weight:600;text-align:center}.lf-kana-choices button:last-child strong{font-size:1.15rem}.lf-kana-choices span{display:grid;gap:.18rem}.lf-kana-choices b{font-size:.78rem}.lf-kana-choices small{color:var(--lf-body,#625968);font-size:.62rem}.lf-kana-choices i{width:.78rem;height:.78rem;border:1px solid rgba(49,42,53,.35);border-radius:50%;background:#fff}.lf-kana-choices button.is-active i{border:3px solid #fff;background:var(--lf-purple-dark,#553d69);box-shadow:0 0 0 1px var(--lf-purple-dark,#553d69)}
+.lf-kana-ready-note{margin:1.3rem 0 1rem}.lf-kana-primary{background:var(--lf-purple-dark,#553d69)}.lf-kana-primary:hover{background:var(--lf-purple,#715389)}
+.lf-kana-game:has([data-challenge="words"].is-active) .lf-kana-primary{background:var(--lf-purple-dark,#553d69)}.lf-kana-game:has([data-challenge="words"].is-active) .lf-kana-mistakes>div>span{min-width:10rem;justify-items:start}.lf-kana-game:has([data-challenge="words"].is-active) .lf-kana-character{font-size:4.4rem}
+@media(max-width:720px){.lf-kana-page>.lf-kana-game{min-height:36rem;padding:1rem}.lf-kana-choices{grid-template-columns:1fr}.lf-kana-choices button{min-height:4.25rem;grid-template-columns:3.2rem minmax(0,1fr) 1rem;padding:.55rem .7rem}.lf-kana-choices strong{font-size:1.4rem}.lf-kana-ready-note{margin:.9rem 0}.lf-kana-game:has([data-challenge="words"].is-active) .lf-kana-character{font-size:3.35rem}}
+
+/* Kana practice hub 1.3 */
+.lf-kana-page{--lf-kana-round:"Hiragino Maru Gothic ProN","Hiragino Maru Gothic Pro","Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif}.lf-kana-page [hidden]{display:none!important}
+.lf-kana-game-head{grid-template-columns:1fr auto auto auto}
+.lf-kana-sound{min-width:5.4rem;padding:.45rem .55rem;display:flex;gap:.35rem;align-items:center;justify-content:center;border:0;border-radius:.3rem;background:#fff;color:var(--lf-purple-dark,#553d69);font:700 .56rem/1 var(--lf-font-sans,system-ui,sans-serif);cursor:pointer}.lf-kana-sound svg{width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.lf-kana-sound.is-muted{color:var(--lf-body,#625968);background:rgba(255,255,255,.65)}.lf-kana-sound:focus-visible,.lf-kana-session-nav button:focus-visible{outline:2px solid var(--lf-purple-dark,#553d69);outline-offset:2px}
+.lf-kana-ready>h2{margin:.1rem 0 .75rem;font-family:var(--lf-font-sans,system-ui,sans-serif);font-size:1rem;font-weight:700}
+.lf-kana-choices{grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem}
+.lf-kana-choices button{min-height:4.85rem;grid-template-columns:3.2rem minmax(0,1fr) .8rem;padding:.65rem .75rem}
+.lf-kana-choices strong{font-size:1.45rem}.lf-kana-choices button:nth-child(3) strong,.lf-kana-choices button:nth-child(4) strong{font-size:1rem}.lf-kana-choices button:nth-child(5) strong,.lf-kana-choices button:nth-child(6) strong{font-family:var(--lf-font-sans,system-ui,sans-serif);font-size:.9rem}
+.lf-kana-choices svg{width:1.35rem;height:1.35rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.lf-kana-hero>p,.lf-kana-choices strong,.lf-kana-character,.lf-kana-result-ja,.lf-kana-mistakes b{font-family:var(--lf-kana-round);font-style:normal;font-weight:700}.lf-kana-character{letter-spacing:.025em}.lf-kana-hero>p,.lf-kana-result-ja{letter-spacing:.04em}
+.lf-kana-options,.lf-kana-sets{margin:.85rem 0 0;padding:.7rem .8rem;display:flex;gap:1rem;align-items:center;background:var(--lf-lavender-soft,#f3edfb);border-radius:.4rem}
+.lf-kana-options>span,.lf-kana-sets>span{flex:0 0 auto;color:var(--lf-body,#625968);font-size:.66rem;font-weight:700}
+.lf-kana-options>div{display:flex;gap:.35rem}.lf-kana-options button{padding:.43rem .7rem;border:0;border-radius:.3rem;background:#fff;color:var(--lf-ink,#312a35);font:600 .66rem/1 var(--lf-font-sans,system-ui,sans-serif);cursor:pointer}.lf-kana-options button.is-active{background:var(--lf-purple-dark,#553d69);color:#fff}
+.lf-kana-sets{align-items:flex-start;flex-direction:column;gap:.55rem}.lf-kana-sets>div{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.4rem;width:100%}.lf-kana-sets button{min-height:3.65rem;padding:.55rem .65rem;display:flex;flex-direction:column;justify-content:space-between;gap:.35rem;border:0;border-radius:.3rem;background:#fff;color:var(--lf-ink,#312a35);text-align:left;cursor:pointer;transition:background .18s ease,transform .18s ease}.lf-kana-sets button:hover{background:#faf7ff;transform:translateY(-1px)}.lf-kana-sets button b{display:block;font-size:.65rem;line-height:1.2}.lf-kana-sets button small{margin:0;display:flex;justify-content:space-between;gap:.4rem;color:var(--lf-body,#625968);font-size:.5rem}.lf-kana-sets button.is-active{background:var(--lf-purple-dark,#553d69);color:#fff}.lf-kana-sets button.is-active small{color:#fff}
+.lf-kana-listen{display:block;margin:-.8rem auto .8rem;padding:.55rem .8rem;border:0;border-radius:.35rem;background:var(--lf-lavender-soft,#f3edfb);color:var(--lf-purple-dark,#553d69);font:700 .66rem/1 var(--lf-font-sans,system-ui,sans-serif);cursor:pointer}
+.lf-kana-session-nav{min-height:2.8rem;margin:.65rem 0 -.3rem;display:flex;justify-content:flex-end}.lf-kana-session-nav button{min-height:2.55rem;padding:.65rem .85rem;border:0;border-radius:.35rem;background:var(--lf-lavender-soft,#f3edfb);color:var(--lf-purple-dark,#553d69);font:700 .67rem/1 var(--lf-font-sans,system-ui,sans-serif);cursor:pointer;transition:background .18s ease,transform .18s ease}.lf-kana-session-nav button:hover{background:var(--lf-lavender,#eadffd);transform:translateY(-1px)}
+.lf-kana-content{padding:4rem 0;border-top:1px solid rgba(49,42,53,.18)}.lf-kana-content>h2{max-width:18ch;margin:0 0 1.25rem;font-family:var(--lf-font-serif,"Instrument Serif",serif);font-size:clamp(2rem,3.2vw,3rem);font-weight:400;line-height:1.05}.lf-kana-content>h3{margin:2rem 0 .55rem;font-size:1rem}.lf-kana-content>p{max-width:72ch;margin:.75rem 0;color:var(--lf-body,#625968);font-size:.86rem;line-height:1.75}.lf-kana-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.lf-kana-columns h3{margin:0 0 .55rem;font-size:.92rem}.lf-kana-columns p{margin:0;color:var(--lf-body,#625968);font-size:.8rem;line-height:1.7}
+.lf-kana-game:has([data-challenge="meaning"].is-active) .lf-kana-character,.lf-kana-game:has([data-challenge="hundred"].is-active) .lf-kana-character{font-size:4.1rem}.lf-kana-game:has([data-challenge="reverse"].is-active) .lf-kana-character{font-family:var(--lf-font-sans,system-ui,sans-serif);font-size:2.8rem}
+@media(max-width:720px){.lf-kana-hero h1{max-width:12ch}.lf-kana-page>.lf-kana-game{min-height:43rem}.lf-kana-game-head{grid-template-columns:1fr auto auto;gap:.55rem}.lf-kana-sound{grid-column:1/-1;justify-self:end;min-width:auto;margin-top:-.2rem;background:transparent}.lf-kana-choices{grid-template-columns:1fr 1fr}.lf-kana-choices button{min-height:4.3rem;grid-template-columns:2.5rem minmax(0,1fr) .7rem;padding:.5rem}.lf-kana-choices strong{font-size:1.2rem}.lf-kana-choices small{font-size:.52rem}.lf-kana-options,.lf-kana-sets{align-items:flex-start;flex-direction:column;gap:.5rem}.lf-kana-sets>div{grid-template-columns:repeat(2,minmax(0,1fr))}.lf-kana-sets button{min-height:3.5rem}.lf-kana-columns{grid-template-columns:1fr;gap:1.5rem}.lf-kana-content{padding:3rem .4rem}.lf-kana-game:has([data-challenge="meaning"].is-active) .lf-kana-character,.lf-kana-game:has([data-challenge="hundred"].is-active) .lf-kana-character{font-size:3rem}}
+
+/* SEO expansion: clear, quiet learning content beneath the game. */
+@media(min-width:901px){.lf-kana-hero h1{max-width:none;font-size:clamp(2.35rem,3.45vw,3.25rem);white-space:nowrap}}
+.lf-kana-guide>div.lf-kana-mode-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.5rem}
+.lf-kana-mode-list p{padding:1rem 0;border-bottom:1px solid rgba(49,42,53,.16)}
+.lf-kana-mode-list strong{color:var(--lf-ink,#312a35)}
+.lf-kana-pair-note{max-width:52rem;margin:1.5rem 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-block:1px solid rgba(49,42,53,.2)}
+.lf-kana-pair-note>div{padding:1.4rem 1.5rem 1.4rem 0;display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:center}
+.lf-kana-pair-note>div+div{padding-left:1.5rem;border-left:1px solid rgba(49,42,53,.2)}
+.lf-kana-pair-note b{font-family:var(--lf-kana-round);font-size:2rem;white-space:nowrap}
+.lf-kana-pair-note p{margin:0;color:var(--lf-body,#625968);font-size:.78rem;line-height:1.65}
+@media(max-width:720px){.lf-kana-hero h1{max-width:14ch;font-size:clamp(2.35rem,11vw,3.15rem)}.lf-kana-guide>div.lf-kana-mode-list{grid-template-columns:1fr}.lf-kana-pair-note{grid-template-columns:1fr}.lf-kana-pair-note>div{padding:1.2rem 0}.lf-kana-pair-note>div+div{padding-left:0;border-left:0;border-top:1px solid rgba(49,42,53,.2)}}
+
+/* 1.6 — Language Finds tool surface: immediate, roomy and consistent with the journal home. */
+body:has(.lf-kana-page){background:#faf8f2;color:#4b4650}
+.lf-kana-page{
+	--lf-paper:#faf8f2;--lf-sheet:#fffdf8;--lf-ink:#4b4650;--lf-body:#625d65;
+	--lf-purple:#6b5e75;--lf-purple-dark:#4b4650;--lf-lavender:#e4dce9;
+	--lf-lavender-soft:#eef0ef;--lf-pink:#f3cbd3;--lf-blue:#dfe7f7;--lf-yellow:#f3d77d;
+	width:min(1180px,calc(100vw - 2rem));margin:.75rem 0 5rem;
+	font-family:"Language Finds Sans","Instrument Sans","Noto Sans JP",system-ui,sans-serif
+}
+.lf-kana-hero{max-width:70rem;padding:1.8rem 1rem 1.35rem}
+.lf-kana-hero>p{margin-bottom:.55rem;padding:0;background:transparent;color:#8a778f;font-size:.67rem;font-weight:600;letter-spacing:.04em}
+.lf-kana-hero h1{max-width:none;margin:0 auto;color:#4b4650;font-family:"Language Finds Sans","Instrument Sans",system-ui,sans-serif;font-size:clamp(2.3rem,3.5vw,3.2rem);font-weight:650;line-height:1.06;letter-spacing:-.025em;white-space:nowrap}
+.lf-kana-hero>div{max-width:48rem;margin:.65rem auto 0;color:#625d65;font-size:.88rem;line-height:1.6}
+.lf-kana-page>.lf-kana-game{width:min(70rem,100%);min-height:39rem;padding:clamp(1.25rem,2.6vw,2rem);border:0;border-radius:8px;background:#fffdf8;box-shadow:0 .8rem 2rem rgba(70,49,64,.07)}
+.lf-kana-game-head{min-height:4.8rem;margin:0 0 1.35rem;padding:.85rem 1.05rem;border:0;border-radius:7px;background:#eef0ef}
+.lf-kana-timer{min-width:7rem;padding:.45rem .8rem;background:#fffdf8;color:#b84e3f}
+.lf-kana-timer span{font-size:2.65rem;font-weight:650}.lf-kana-score strong,.lf-kana-streak strong{color:#4b4650;font-size:1.45rem}
+.lf-kana-score span,.lf-kana-streak span{font-size:.64rem}.lf-kana-sound{min-height:2.5rem;border-radius:6px;background:#fffdf8;color:#4b4650;font-size:.62rem}
+.lf-kana-ready{justify-content:flex-start}.lf-kana-ready>h2{margin:.15rem 0 .85rem;font-size:1.15rem;font-weight:650}
+.lf-kana-choices{grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.lf-kana-choices button{min-height:7.15rem;padding:1rem;grid-template-columns:4rem minmax(0,1fr) .8rem;gap:.75rem;border:0;border-radius:8px;background:#f3efec;box-shadow:none;transition:background .18s ease,transform .18s ease}
+.lf-kana-choices button:nth-child(2),.lf-kana-choices button:nth-child(5){background:#edf1fa}.lf-kana-choices button:nth-child(3),.lf-kana-choices button:nth-child(6){background:#f5eaf0}
+.lf-kana-choices button:hover{border:0;background:#e7d9ef;transform:translateY(-2px)}
+.lf-kana-choices button.is-active{border:0;background:#4b4650;color:#fffdf8;box-shadow:none}.lf-kana-choices button.is-active small{color:#e9e5e8}
+.lf-kana-choices strong{font-size:2rem;font-weight:650}.lf-kana-choices button:nth-child(3) strong,.lf-kana-choices button:nth-child(4) strong{font-size:1.3rem}.lf-kana-choices button:nth-child(5) strong,.lf-kana-choices button:nth-child(6) strong{font-size:1.05rem}
+.lf-kana-choices b{font-size:.9rem;font-weight:650}.lf-kana-choices small{font-size:.67rem;line-height:1.35}.lf-kana-choices i{border-color:rgba(75,70,80,.28)}
+.lf-kana-options,.lf-kana-sets{margin-top:1rem;padding:.85rem 1rem;border-radius:7px;background:#eef0ef}
+.lf-kana-options>span,.lf-kana-sets>span{font-size:.7rem}.lf-kana-options button{min-height:2.35rem;padding:.55rem .9rem;border-radius:6px;font-size:.7rem}.lf-kana-options button.is-active{background:#4b4650}
+.lf-kana-sets button{min-height:4.15rem;padding:.65rem .7rem;border-radius:6px}.lf-kana-sets button.is-active{background:#4b4650}.lf-kana-sets button b{font-size:.69rem}.lf-kana-sets button small{font-size:.54rem}
+.lf-kana-ready-note{margin:1.15rem 0 .8rem}.lf-kana-ready-note span{font-size:1.05rem}.lf-kana-ready-note p{font-size:.72rem}
+.lf-kana-primary,.lf-kana-secondary{min-height:3.7rem;border-radius:7px}.lf-kana-primary{background:#4b4650;box-shadow:none;font-size:.82rem}.lf-kana-primary:hover{background:#35353b}
+.lf-kana-playing{max-width:54rem;width:100%;margin:0 auto}.lf-kana-progress{border-radius:4px;background:#eee9e6}.lf-kana-progress i{background:#b84e3f}
+.lf-kana-character{min-height:13rem;color:#4b4650;font-size:8.5rem}.lf-kana-answers{gap:.85rem}.lf-kana-answers button{min-height:4.35rem;border-radius:7px;background:#f3efec;font-size:1.05rem}
+.lf-kana-session-nav button,.lf-kana-listen{border-radius:6px;background:#eef0ef;color:#4b4650}
+.lf-kana-result h2,.lf-kana-guide h2,.lf-kana-reading h2,.lf-kana-faq h2,.lf-kana-content>h2{font-family:"Language Finds Sans","Instrument Sans",system-ui,sans-serif;font-weight:650;letter-spacing:-.025em}
+.lf-kana-result h2{font-size:clamp(2rem,3vw,2.8rem)}
+.lf-kana-seo{width:min(58rem,100%);margin-top:5.5rem}.lf-kana-seo .lf-kana-guide{grid-template-columns:1fr;padding:3.2rem 0;border-top:0;border-bottom:0;gap:1.3rem}
+.lf-kana-guide h2,.lf-kana-reading h2,.lf-kana-faq h2,.lf-kana-content>h2{max-width:22ch;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.12}
+.lf-kana-guide>div.lf-kana-mode-list{gap:0 3rem}.lf-kana-mode-list p{padding:1.1rem 0}.lf-kana-mode-list strong{font-size:.82rem}.lf-kana-mode-list span{font-size:.78rem}
+.lf-kana-reading,.lf-kana-content,.lf-kana-faq{padding:4rem 0;border-top:1px solid #e4dedc}.lf-kana-reading{grid-template-columns:minmax(0,1.35fr) minmax(15rem,.65fr);gap:4rem}
+.lf-kana-reading aside{border-radius:8px;background:#edf1fa}.lf-kana-content>p,.lf-kana-reading p{font-size:.92rem;line-height:1.78}
+.lf-kana-pair-note{max-width:none;border:0;gap:.8rem}.lf-kana-pair-note>div{padding:1.25rem;grid-template-columns:auto 1fr;border:0;border-radius:8px;background:#f5eaf0}.lf-kana-pair-note>div+div{padding-left:1.25rem;border:0;background:#edf1fa}
+.lf-kana-pair-note b{font-size:2.2rem}.lf-kana-faq summary{font-size:.94rem}.lf-kana-faq details p{font-size:.88rem}
+.lf-kana-final{margin-top:1rem;padding:1.5rem 1.6rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-radius:8px;background:#eef0ef}.lf-kana-final h2{max-width:22ch;margin:0;font-size:1.45rem;font-weight:650;line-height:1.2}.lf-kana-final p{margin:.45rem 0 0;color:#625d65;font-size:.78rem}.lf-kana-final a{min-height:3rem;padding:.75rem .9rem;display:inline-flex;align-items:center;gap:.8rem;flex:0 0 auto;border-radius:6px;background:#4b4650;color:#fffdf8;font-size:.72rem;font-weight:650;text-decoration:none}.lf-kana-final a:hover{background:#35353b}
+@media(max-width:900px){.lf-kana-hero h1{max-width:21ch;white-space:normal}.lf-kana-page>.lf-kana-game{min-height:40rem}.lf-kana-choices{grid-template-columns:repeat(2,minmax(0,1fr))}.lf-kana-choices button{min-height:6.25rem}.lf-kana-reading{grid-template-columns:1fr;gap:2rem}}
+@media(max-width:620px){.lf-kana-page{width:calc(100vw - 1rem);margin-top:.25rem}.lf-kana-hero{padding:1.25rem .55rem 1rem}.lf-kana-hero h1{max-width:15ch;font-size:clamp(2rem,9vw,2.55rem);line-height:1.08}.lf-kana-hero>div{font-size:.8rem}.lf-kana-page>.lf-kana-game{min-height:41rem;padding:.75rem;border-radius:8px}.lf-kana-game-head{margin-bottom:.9rem;padding:.65rem}.lf-kana-timer{min-width:5.3rem}.lf-kana-timer span{font-size:2.1rem}.lf-kana-score,.lf-kana-streak{min-width:3.35rem}.lf-kana-choices{gap:.55rem}.lf-kana-choices button{min-height:5.3rem;padding:.65rem;grid-template-columns:2.65rem minmax(0,1fr) .65rem;gap:.45rem}.lf-kana-choices strong{font-size:1.45rem}.lf-kana-choices b{font-size:.76rem}.lf-kana-choices small{font-size:.56rem}.lf-kana-character{min-height:10.5rem;font-size:6.5rem}.lf-kana-seo{margin-top:3.5rem}.lf-kana-seo .lf-kana-guide,.lf-kana-reading,.lf-kana-content,.lf-kana-faq{padding:3rem .35rem}.lf-kana-pair-note{grid-template-columns:1fr}.lf-kana-pair-note>div+div{padding-left:1.25rem;border-top:0}.lf-kana-final{margin-inline:.35rem;padding:1.25rem;align-items:flex-start;flex-direction:column}.lf-kana-final a{width:100%;justify-content:space-between}}
+
+/* 1.7 — SEO landing-page structure: breathing room, benefits and alternating learning visuals. */
+.lf-kana-hero{padding-top:2.8rem;padding-bottom:2rem}
+.lf-kana-hero h1{max-width:22ch;font-size:clamp(2.45rem,3.7vw,3.45rem);line-height:1.12;white-space:normal;text-wrap:balance}
+.lf-kana-hero>div{margin-top:.9rem;font-size:.94rem}
+.lf-kana-seo{width:min(66rem,100%);margin-top:6.5rem}
+.lf-kana-benefits{margin:0 0 1rem;padding:1.4rem 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid #e4dedc}
+.lf-kana-benefits>div{padding:0 1.5rem;display:grid;gap:.4rem}.lf-kana-benefits>div:first-child{padding-left:0}.lf-kana-benefits>div+div{border-left:1px solid #e4dedc}
+.lf-kana-benefits strong{font-size:.88rem;font-weight:650}.lf-kana-benefits span{color:#625d65;font-size:.76rem;line-height:1.6}
+.lf-kana-split{padding:5rem 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(22rem,.9fr);gap:clamp(3rem,7vw,6rem);align-items:center;border-top:1px solid #e4dedc}
+.lf-kana-split-reverse .lf-kana-split-copy{grid-column:2}.lf-kana-split-reverse .lf-kana-visual{grid-column:1;grid-row:1}
+.lf-kana-split-copy h2{max-width:19ch;margin:0 0 1.25rem;font-size:clamp(1.9rem,3vw,2.6rem);font-weight:650;line-height:1.12;letter-spacing:-.025em}
+.lf-kana-split-copy h3{margin:1.7rem 0 .55rem;font-size:.95rem}.lf-kana-split-copy p{margin:.8rem 0;color:#625d65;font-size:.9rem;line-height:1.78}
+.lf-kana-split-copy>a{width:fit-content;margin-top:1.35rem;padding:.7rem .82rem;display:inline-flex;align-items:center;gap:.8rem;border-radius:6px;background:#4b4650;color:#fffdf8;font-size:.7rem;font-weight:650;text-decoration:none}.lf-kana-split-copy>a:hover{background:#35353b}
+.lf-kana-visual{min-height:22rem;padding:2rem;border-radius:8px;background:#f5eaf0;box-shadow:0 .8rem 2rem rgba(70,49,64,.055)}
+.lf-kana-visual-pairs{display:grid;align-content:center;gap:.45rem}.lf-kana-visual-pairs>div{display:flex;align-items:center;justify-content:center;gap:1.25rem}.lf-kana-visual-pairs b{font-family:var(--lf-kana-round);font-size:4.8rem;line-height:1}.lf-kana-visual-pairs i{color:#8b7d88;font-size:.64rem;font-style:normal;font-weight:650;text-transform:uppercase}.lf-kana-visual-pairs p{margin:0 0 1.3rem;color:#756b73;font-size:.64rem;text-align:center}.lf-kana-visual-pairs p:last-child{margin-bottom:0}.lf-kana-visual-pairs p span{padding:0 .3rem}
+.lf-kana-visual-words{display:grid;align-content:center;background:#edf1fa}.lf-kana-visual-words p{margin:0;padding:.8rem .25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(75,70,80,.13)}.lf-kana-visual-words p:last-child{border-bottom:0}.lf-kana-visual-words b{font-family:var(--lf-kana-round);font-size:1.35rem}.lf-kana-visual-words span{color:#625d65;font-size:.7rem}
+@media(max-width:800px){.lf-kana-benefits{grid-template-columns:1fr}.lf-kana-benefits>div{padding:1rem 0}.lf-kana-benefits>div+div{border-left:0;border-top:1px solid #e4dedc}.lf-kana-split{padding:4rem .35rem;grid-template-columns:1fr;gap:2rem}.lf-kana-split-reverse .lf-kana-split-copy,.lf-kana-split-reverse .lf-kana-visual{grid-column:auto;grid-row:auto}.lf-kana-visual{min-height:19rem}}
+@media(max-width:620px){.lf-kana-hero{padding-top:2rem;padding-bottom:1.5rem}.lf-kana-hero h1{max-width:16ch;font-size:clamp(2.05rem,9vw,2.6rem);line-height:1.12}.lf-kana-seo{margin-top:4.5rem}.lf-kana-benefits{margin-inline:.35rem}.lf-kana-visual-pairs b{font-size:4.2rem}}
+
+/* 1.8 — High-demand practice controls and targeted retry. */
+.lf-kana-options>div{min-width:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.lf-kana-options button{white-space:nowrap}
+.lf-kana-actions{grid-template-columns:1fr 1fr auto}
+.lf-kana-actions [data-retry-weak]{background:#b84e3f}
+.lf-kana-actions [data-retry-weak]:hover{background:#963e33}
+.lf-kana-game:has([data-level="all"].is-active) [data-level-options],.lf-kana-game:has([data-level="combo"].is-active) [data-level-options]{background:#edf1fa}
+.lf-kana-game:has([data-pair].is-active) [data-lookalike-options]{background:#f5eaf0}
+@media(max-width:720px){.lf-kana-page>.lf-kana-game{min-height:46rem}.lf-kana-options{gap:.55rem}.lf-kana-options>div{width:100%}.lf-kana-options button{flex:1 1 auto}.lf-kana-actions{grid-template-columns:1fr}.lf-kana-actions [data-retry-weak],.lf-kana-actions .lf-kana-primary,.lf-kana-actions .lf-kana-secondary{width:100%}}
+
+/* 1.9 — Research-led SEO feature modules. */
+.lf-kana-feature-row{padding:5rem 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(20rem,.82fr);gap:clamp(3rem,8vw,7rem);align-items:center;border-top:1px solid #e4dedc}
+.lf-kana-feature-row-reverse>div:first-child{grid-column:2}.lf-kana-feature-row-reverse>.lf-kana-feature-demo{grid-column:1;grid-row:1}
+.lf-kana-feature-row h2,.lf-kana-levels h2,.lf-kana-use-cases h2{max-width:21ch;margin:0 0 1.15rem;font-size:clamp(1.9rem,3vw,2.6rem);font-weight:650;line-height:1.12;letter-spacing:-.025em}
+.lf-kana-feature-row>div:first-child>p{margin:.8rem 0;color:#625d65;font-size:.9rem;line-height:1.78}.lf-kana-feature-row>div:first-child>a{width:fit-content;margin-top:1.3rem;padding:.7rem .82rem;display:inline-flex;align-items:center;gap:.75rem;border-radius:6px;background:#4b4650;color:#fffdf8;font-size:.7rem;font-weight:650;text-decoration:none}
+.lf-kana-feature-demo{min-height:20rem;padding:1.5rem;display:grid;align-content:center;border-radius:8px;background:#f5eaf0;box-shadow:0 .8rem 2rem rgba(70,49,64,.055)}
+.lf-kana-speed-demo>span{justify-self:end;color:#b84e3f;font-size:.72rem;font-weight:650}.lf-kana-speed-demo>b{margin:.7rem 0 1.2rem;font-family:var(--lf-kana-round);font-size:7rem;line-height:1;text-align:center}.lf-kana-speed-demo>div{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}.lf-kana-speed-demo i{padding:.7rem;border-radius:6px;background:#fffdf8;font-size:.65rem;font-style:normal;font-weight:650;text-align:center}
+.lf-kana-sound-demo{background:#edf1fa}.lf-kana-sound-demo>span{width:fit-content;margin:0 auto 1.5rem;padding:.7rem .9rem;display:flex;align-items:center;gap:.55rem;border-radius:6px;background:#4b4650;color:#fffdf8;font-size:.68rem;font-weight:650}.lf-kana-sound-demo svg{width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}.lf-kana-sound-demo>div{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem}.lf-kana-sound-demo b{min-height:4rem;display:grid;place-items:center;border-radius:6px;background:#fffdf8;font-family:var(--lf-kana-round);font-size:1.75rem}
+.lf-kana-levels{padding:5rem 0;display:grid;grid-template-columns:.72fr 1.28fr;gap:4rem;border-top:1px solid #e4dedc}.lf-kana-levels>div>p{max-width:30rem;margin:0;color:#625d65;font-size:.88rem;line-height:1.75}.lf-kana-levels ol{margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;list-style:none;counter-reset:kana-level}.lf-kana-levels li{padding:1rem 0;display:grid;grid-template-columns:2rem 1fr;gap:.2rem .8rem;border-bottom:1px solid #e4dedc;counter-increment:kana-level}.lf-kana-levels li::before{grid-row:1/3;color:#b84e3f;font-size:.7rem;font-weight:650;content:"0" counter(kana-level)}.lf-kana-levels b{font-size:.82rem}.lf-kana-levels span{color:#625d65;font-size:.72rem;line-height:1.55}
+.lf-kana-use-cases{padding:4.5rem 0;display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;border-top:1px solid #e4dedc}.lf-kana-use-cases>div>p{max-width:27rem;margin:0;color:#625d65;font-size:.86rem;line-height:1.7}.lf-kana-use-cases ul{margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.65rem 1.8rem;list-style:none}.lf-kana-use-cases li{padding:.8rem 0;display:grid;grid-template-columns:.45rem 1fr;gap:.65rem;align-items:start;border-bottom:1px solid #e4dedc;color:#625d65;font-size:.78rem;line-height:1.55}.lf-kana-use-cases li::before{width:.42rem;height:.42rem;margin-top:.38rem;border-radius:2px;background:#b84e3f;content:""}
+.lf-kana-faq-extra{padding-bottom:1rem}.lf-kana-faq-extra+.lf-kana-faq{padding-top:3rem;border-top:0}
+@media(max-width:800px){.lf-kana-feature-row{padding:4rem .35rem;grid-template-columns:1fr;gap:2rem}.lf-kana-feature-row-reverse>div:first-child,.lf-kana-feature-row-reverse>.lf-kana-feature-demo{grid-column:auto;grid-row:auto}.lf-kana-feature-row-reverse>.lf-kana-feature-demo{grid-row:2}.lf-kana-levels,.lf-kana-use-cases{padding:4rem .35rem;grid-template-columns:1fr;gap:2rem}.lf-kana-levels ol,.lf-kana-use-cases ul{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.lf-kana-levels ol,.lf-kana-use-cases ul{grid-template-columns:1fr}.lf-kana-feature-demo{min-height:17rem}.lf-kana-speed-demo>b{font-size:5.7rem}.lf-kana-sound-demo b{min-height:3.5rem;font-size:1.45rem}}
+
+/* 1.10 — Search-led interactive kana reference. */
+.lf-kana-chart{padding:5rem 0;border-top:1px solid #e4dedc}
+.lf-kana-chart-copy{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;align-items:end}
+.lf-kana-chart h2{max-width:18ch;margin:0;font-size:clamp(1.9rem,3vw,2.6rem);font-weight:650;line-height:1.12;letter-spacing:-.025em}
+.lf-kana-chart-copy p{max-width:38rem;margin:0;color:#625d65;font-size:.9rem;line-height:1.78}
+.lf-kana-chart-tools{margin:2rem 0 .8rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.lf-kana-chart-tabs{padding:.28rem;display:flex;gap:.25rem;border-radius:7px;background:#eef0ef}
+.lf-kana-chart-tabs button,.lf-kana-chart-practice{min-height:2.75rem;border:0;border-radius:6px;font:650 .72rem/1 "Language Finds Sans","Instrument Sans",system-ui,sans-serif;cursor:pointer}
+.lf-kana-chart-tabs button{padding:.65rem 1rem;background:transparent;color:#625d65}.lf-kana-chart-tabs button.is-active{background:#4b4650;color:#fffdf8}
+.lf-kana-chart-practice{padding:.7rem .9rem;background:#4b4650;color:#fffdf8}.lf-kana-chart-practice:hover{background:#35353b}
+.lf-kana-chart-grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:.4rem}
+.lf-kana-chart-grid button{min-width:0;min-height:4.3rem;padding:.4rem .2rem;display:grid;place-content:center;gap:.15rem;border:0;border-radius:6px;background:#f3efec;color:#4b4650;cursor:pointer;transition:background .18s ease,transform .18s ease}
+.lf-kana-chart-grid button:nth-child(10n+6),.lf-kana-chart-grid button:nth-child(10n+7),.lf-kana-chart-grid button:nth-child(10n+8),.lf-kana-chart-grid button:nth-child(10n+9),.lf-kana-chart-grid button:nth-child(10n){background:#edf1fa}
+.lf-kana-chart-grid button:hover,.lf-kana-chart-grid button.is-speaking{background:#f3cbd3;transform:translateY(-2px)}
+.lf-kana-chart-grid strong{font-family:var(--lf-kana-round);font-size:1.55rem;font-weight:650;line-height:1}.lf-kana-chart-grid small{color:#756b73;font-size:.58rem}
+.lf-kana-chart-hint{min-height:1.3rem;margin:.8rem 0 0;color:#756b73;font-size:.7rem}
+.lf-kana-chart button:focus-visible{outline:2px solid #4b4650;outline-offset:2px}
+@media(max-width:800px){.lf-kana-chart{padding:4rem .35rem}.lf-kana-chart-copy{grid-template-columns:1fr;gap:1rem}.lf-kana-chart-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:520px){.lf-kana-chart-tools{align-items:stretch;flex-direction:column}.lf-kana-chart-tabs{display:grid;grid-template-columns:1fr 1fr}.lf-kana-chart-practice{width:100%}.lf-kana-chart-grid{gap:.32rem}.lf-kana-chart-grid button{min-height:3.8rem}.lf-kana-chart-grid strong{font-size:1.35rem}}
+
+/* 1.11 — Warm arcade palette and friendly rounded typography. */
+@font-face{font-family:"LF Fredoka";src:url("../fonts/fredoka-variable.ttf") format("truetype");font-style:normal;font-weight:300 700;font-display:swap}
+body:has(.lf-kana-page){background:#fff8ed;color:#403641}
+.lf-kana-page{
+	--lf-paper:#fff8ed;--lf-sheet:#fffdf8;--lf-ink:#403641;--lf-body:#665c65;
+	--lf-coral:#df6758;--lf-coral-dark:#bd4d42;--lf-purple:#7464ad;--lf-purple-dark:#403641;
+	--lf-pink:#f8d9d5;--lf-blue:#dceafa;--lf-mint:#dcefe5;--lf-yellow:#f7e3a5;--lf-lavender:#e9e1f5;--lf-lavender-soft:#f2edf7;
+	--lf-play:"LF Fredoka","Arial Rounded MT Bold","Hiragino Maru Gothic ProN",system-ui,sans-serif;
+	--lf-kana-round:"Hiragino Maru Gothic ProN","Hiragino Maru Gothic Pro","Yu Gothic",sans-serif
+}
+.lf-kana-hero h1,.lf-kana-ready>h2,.lf-kana-result h2,.lf-kana-guide h2,.lf-kana-reading h2,.lf-kana-faq h2,.lf-kana-content>h2,.lf-kana-split-copy h2,.lf-kana-feature-row h2,.lf-kana-levels h2,.lf-kana-use-cases h2,.lf-kana-chart h2,.lf-kana-final h2{font-family:var(--lf-play);font-weight:600;letter-spacing:-.012em}
+.lf-kana-hero>p{color:#bd4d42}.lf-kana-hero>div{color:#665c65}
+.lf-kana-page>.lf-kana-game{border-radius:16px;box-shadow:0 1rem 2.6rem rgba(108,72,76,.1)}
+.lf-kana-game-head{border-radius:12px;background:#f2edf7}.lf-kana-timer{border-radius:9px;color:#bd4d42}
+.lf-kana-timer span,.lf-kana-score strong,.lf-kana-streak strong,.lf-kana-choices b,.lf-kana-options button,.lf-kana-sets button,.lf-kana-primary,.lf-kana-secondary,.lf-kana-chart-tabs button,.lf-kana-chart-practice,.lf-kana-answer button,.lf-kana-answers button{font-family:var(--lf-play)}
+.lf-kana-choices{gap:.9rem}.lf-kana-choices button{border-radius:13px;background:#f8e5d4}.lf-kana-choices button:nth-child(2){background:#dceafa}.lf-kana-choices button:nth-child(3){background:#e9e1f5}.lf-kana-choices button:nth-child(4){background:#f8d9d5}.lf-kana-choices button:nth-child(5){background:#dcefe5}.lf-kana-choices button:nth-child(6){background:#f7e3a5}
+.lf-kana-choices button:hover{background:#f5c9c3}.lf-kana-choices button.is-active{background:#df6758;color:#fff}.lf-kana-choices button.is-active small{color:#fff4f1}.lf-kana-choices i{border-color:rgba(64,54,65,.25)}.lf-kana-choices button.is-active i{border-color:#fff;background:#fff}
+.lf-kana-options,.lf-kana-sets{border-radius:11px;background:#f2edf7}.lf-kana-options button,.lf-kana-sets button{border-radius:8px}.lf-kana-options button.is-active,.lf-kana-sets button.is-active{background:#7464ad}
+.lf-kana-primary,.lf-kana-chart-practice,.lf-kana-final a{background:#df6758;color:#fff}.lf-kana-primary:hover,.lf-kana-chart-practice:hover,.lf-kana-final a:hover{background:#bd4d42}.lf-kana-actions [data-retry-weak]{background:#7464ad}.lf-kana-actions [data-retry-weak]:hover{background:#5c4c92}
+.lf-kana-progress i{background:#df6758}.lf-kana-character{color:#403641}.lf-kana-answers button{border-radius:11px;background:#f6f0ea}.lf-kana-answers button:hover:not(:disabled){background:#e9e1f5}.lf-kana-answers button.is-correct{background:#cdebdc;color:#255f46}.lf-kana-answers button.is-wrong{background:#f7d4d0;color:#8e3933}
+.lf-kana-benefits{border-color:#eaded5}.lf-kana-benefits>div+div{border-color:#eaded5}
+.lf-kana-reading aside,.lf-kana-sound-demo,.lf-kana-visual-words{background:#dceafa}.lf-kana-visual-pairs,.lf-kana-feature-demo{background:#f8d9d5}.lf-kana-final{background:#f7e3a5}
+.lf-kana-chart-tabs{background:#f2edf7}.lf-kana-chart-tabs button.is-active{background:#7464ad}.lf-kana-chart-grid button{border-radius:9px;background:#fff0df}.lf-kana-chart-grid button:nth-child(10n+6),.lf-kana-chart-grid button:nth-child(10n+7),.lf-kana-chart-grid button:nth-child(10n+8),.lf-kana-chart-grid button:nth-child(10n+9),.lf-kana-chart-grid button:nth-child(10n){background:#e5effb}.lf-kana-chart-grid button:hover,.lf-kana-chart-grid button.is-speaking{background:#f8d9d5}
+.lf-kana-session-nav button,.lf-kana-listen{background:#e9e1f5;color:#4f4179}.lf-kana-sound{color:#403641}
+.lf-kana-page button:focus-visible,.lf-kana-page a:focus-visible,.lf-kana-page summary:focus-visible{outline:3px solid #7464ad;outline-offset:3px}
+@media(prefers-reduced-motion:no-preference){.lf-kana-choices button.is-active strong{animation:lf-kana-pop .32s cubic-bezier(.2,.8,.2,1)}@keyframes lf-kana-pop{0%{transform:scale(.88)}70%{transform:scale(1.07)}100%{transform:scale(1)}}}
+
+/* 1.12 — Game-first opening and one friendly typographic voice. */
+.lf-kana-page,.lf-kana-page button,.lf-kana-page a,.lf-kana-page summary{font-family:var(--lf-play)}
+.lf-kana-hero{max-width:70rem;padding:.65rem 1rem .9rem;text-align:left}
+.lf-kana-hero>p{display:none}
+.lf-kana-hero h1{max-width:none;margin:0;font-size:clamp(1.8rem,2.45vw,2.45rem);line-height:1.08;white-space:nowrap;text-wrap:initial}
+.lf-kana-hero>div{max-width:none;margin:.35rem 0 0;font-size:.82rem;line-height:1.45}
+.lf-kana-page>.lf-kana-game{min-height:0}
+.lf-kana-ready-note{margin:.85rem 0 .65rem;display:grid;grid-template-columns:auto 1fr;gap:.75rem;align-items:center;text-align:left}
+.lf-kana-ready-note span{font-family:var(--lf-play);font-size:.9rem;font-weight:600;color:#bd4d42;white-space:nowrap}
+.lf-kana-ready-note p{margin:0;font-family:var(--lf-play);font-size:.72rem;line-height:1.45}
+.lf-kana-seo,.lf-kana-seo p,.lf-kana-seo li,.lf-kana-seo span,.lf-kana-seo strong,.lf-kana-seo summary{font-family:var(--lf-play)}
+.lf-kana-seo p,.lf-kana-seo li{letter-spacing:.002em}
+@media(max-width:900px){.lf-kana-hero h1{max-width:none;white-space:normal;text-wrap:balance}}
+@media(max-width:620px){.lf-kana-hero{padding:.4rem .55rem .65rem}.lf-kana-hero h1{max-width:none;font-size:1.48rem;line-height:1.12}.lf-kana-hero>div{margin-top:.25rem;font-size:.72rem}.lf-kana-ready-note{grid-template-columns:1fr;gap:.2rem}.lf-kana-ready-note span{font-size:.82rem}}
+
+/* 1.13 — Beginner-first entry, progressive disclosure and mastery. */
+.lf-kana-game[data-game-state="ready"] .lf-kana-game-head{display:none}
+.lf-kana-ready>h2{margin:0;font-size:clamp(1.55rem,2.5vw,2rem)}
+.lf-kana-ready-intro{max-width:42rem;margin:.35rem 0 1rem;color:#665c65;font-size:.78rem;line-height:1.55}
+.lf-kana-paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.lf-kana-paths button{min-height:6.7rem;padding:1rem;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.8rem;align-items:center;border:0;border-radius:13px;background:#e9e1f5;color:#403641;text-align:left;cursor:pointer;transition:background .18s ease,transform .18s ease}
+.lf-kana-paths button:nth-child(2){background:#dceafa}.lf-kana-paths button:nth-child(3){background:#f7e3a5}
+.lf-kana-paths button:hover{transform:translateY(-2px)}.lf-kana-paths button.is-active{background:#df6758;color:#fff}
+.lf-kana-paths span{display:grid;gap:.28rem}.lf-kana-paths b{font-size:.92rem;font-weight:600}.lf-kana-paths small{color:inherit;font-size:.65rem;line-height:1.4;opacity:.82}
+.lf-kana-paths strong{font-family:var(--lf-kana-round);font-size:1.55rem;font-weight:700;white-space:nowrap}.lf-kana-paths button:nth-child(2) strong{font-family:var(--lf-play);font-size:2rem}
+.lf-kana-ready>.lf-kana-primary{min-height:3.45rem}
+.lf-kana-home-progress{margin:.55rem 0 0;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.lf-kana-home-progress p{margin:0;color:#665c65;font-size:.68rem}.lf-kana-home-progress strong{color:#403641}
+.lf-kana-home-progress button{min-height:2.55rem;padding:.55rem .75rem;border:0;border-radius:7px;background:#dcefe5;color:#315d49;font-size:.67rem;font-weight:600;cursor:pointer}
+.lf-kana-more{margin-top:.8rem;border-top:1px solid #eaded5}
+.lf-kana-more>summary{min-height:3rem;padding:.85rem 0;display:flex;align-items:center;justify-content:space-between;color:#564c55;font-size:.72rem;font-weight:600;cursor:pointer;list-style:none}
+.lf-kana-more>summary::-webkit-details-marker{display:none}.lf-kana-more>summary::after{content:"+";font-size:1.2rem;font-weight:400}.lf-kana-more[open]>summary::after{content:"−"}
+.lf-kana-more-inner{padding:.25rem 0 .4rem}.lf-kana-more .lf-kana-choices{grid-template-columns:repeat(3,minmax(0,1fr))}.lf-kana-more .lf-kana-choices button{min-height:5.6rem}
+.lf-kana-options label{min-width:min(100%,22rem)}.lf-kana-options select{width:100%;min-height:2.75rem;padding:.55rem 2.2rem .55rem .75rem;border:0;border-radius:8px;background:#fffdf8;color:#403641;font:600 .72rem/1.2 var(--lf-play);cursor:pointer}
+.lf-kana-game:has([data-challenge="learn"].is-active) [data-beginner-options]{background:#fff0df}
+.lf-kana-playing:has([data-learn-next]) .lf-kana-character{min-height:10rem}.lf-kana-playing:has([data-learn-next]) .lf-kana-word-note{font-family:var(--lf-play);font-size:1.1rem;font-weight:600}.lf-kana-playing:has([data-learn-next]) .lf-kana-answers{grid-template-columns:1fr}.lf-kana-playing:has([data-learn-next]) .lf-kana-answers button{background:#df6758;color:#fff}
+@media(max-width:720px){.lf-kana-paths{grid-template-columns:1fr}.lf-kana-paths button{min-height:4.75rem;padding:.75rem .85rem}.lf-kana-more .lf-kana-choices{grid-template-columns:1fr 1fr}.lf-kana-home-progress{align-items:flex-start;flex-direction:column;gap:.45rem}.lf-kana-ready-intro{margin-bottom:.75rem}}
+
+/* 1.14 — Every game visible in the opening tool; tighter handoff to SEO content. */
+.lf-kana-paths{display:none}
+.lf-kana-more{order:1;margin:0;border:0}
+.lf-kana-more>summary{display:none}
+.lf-kana-more-inner{padding:0}
+.lf-kana-more .lf-kana-choices{grid-template-columns:repeat(7,minmax(0,1fr));gap:.45rem}
+.lf-kana-more .lf-kana-choices button{min-height:4.75rem;padding:.55rem;grid-template-columns:2.25rem minmax(0,1fr) .5rem;gap:.35rem;border-radius:10px}
+.lf-kana-more .lf-kana-choices strong{font-size:1.15rem}.lf-kana-more .lf-kana-choices b{font-size:.65rem}.lf-kana-more .lf-kana-choices small{font-size:.52rem;line-height:1.25}
+.lf-kana-ready-note{order:2}.lf-kana-ready>.lf-kana-primary{order:3}.lf-kana-home-progress{order:4}
+.lf-kana-seo{margin-top:2rem}
+@media(max-width:900px){.lf-kana-more .lf-kana-choices{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:620px){.lf-kana-ready>h2{font-size:1.35rem}.lf-kana-ready-intro{margin:.2rem 0 .55rem;font-size:.7rem}.lf-kana-more .lf-kana-choices{grid-template-columns:1fr 1fr}.lf-kana-more .lf-kana-choices button{min-height:3.75rem;padding:.4rem}.lf-kana-more .lf-kana-choices small{display:none}.lf-kana-ready-note{margin:.55rem 0 .45rem}.lf-kana-seo{margin-top:2.5rem}}
+
+/* 1.15 — A balanced 4+3 game menu and expanded katakana practice. */
+.lf-kana-more .lf-kana-choices{grid-template-columns:repeat(12,minmax(0,1fr));gap:.6rem}
+.lf-kana-more .lf-kana-choices button{grid-column:span 3;min-height:5.15rem;padding:.65rem .75rem;grid-template-columns:2.5rem minmax(0,1fr) .55rem;gap:.45rem}
+.lf-kana-more .lf-kana-choices button:nth-child(n+5){grid-column:span 4}
+.lf-kana-more .lf-kana-choices strong{font-size:1.3rem}.lf-kana-more .lf-kana-choices b{font-size:.72rem}.lf-kana-more .lf-kana-choices small{font-size:.56rem}
+@media(max-width:900px){.lf-kana-more .lf-kana-choices{grid-template-columns:repeat(2,minmax(0,1fr))}.lf-kana-more .lf-kana-choices button,.lf-kana-more .lf-kana-choices button:nth-child(n+5){grid-column:auto}.lf-kana-more .lf-kana-choices button:last-child{grid-column:1/-1}}
+@media(max-width:620px){.lf-kana-more .lf-kana-choices button{min-height:3.75rem;padding:.4rem}.lf-kana-more .lf-kana-choices small{display:none}}
